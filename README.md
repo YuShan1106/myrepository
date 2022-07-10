@@ -42,3 +42,7 @@
 |3|subject|tinytext|主旨|佈告主旨|
 |4|content|text|內容|佈告內容|
 |5|date|datetime|發佈時間|佈告發布時間|
+## 介面說明
+###### 登入介面
+![登入介面](https://user-images.githubusercontent.com/109023515/178149340-2a866594-6366-41d1-93c3-8741542587ef.jpeg)
+
