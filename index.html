@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("span").hide(); //隱藏所有 span tags
+            $("#user_id").focus(); //帳號欄取得輸入焦點
+            $("#form01").submit(function () { //定義當 id="form01" 的表單送出時的處理函式
+                $("span").hide();//隱藏所有 span tags
+                if ($("#user_id").val() == "") { //帳號欄沒輸入
+                    $("#error_msg1").show(); //顯示"帳號沒輸入"
+                    $("#user_id").focus(); //帳號欄取得焦點
+                    return false; //取消送出
+                }
+                if ($("#user_password").val() == "") { //密碼欄沒輸入
+                    $("#error_msg2").show(); //顯示"密碼沒輸入"
+                    $("#user_password").focus(); //密碼欄取得焦點
+                    return false; //取消送出
+                }
+            });
+
+        }); 
+        
+    </script>
+</head>
+
+<body>
+    <form id="form01" name="form01" method="POST" action="check.php"
+        style="width: 400px; margin-left: auto;margin-right: auto;">
+        <fieldset>
+            <legend>請輸入帳號&密碼</legend>
+            <label>
+                帳號：<input type="text" id="user_id" name="user_id" autofocus><span id="error_msg1" class="error">*
+                    帳號沒輸入</span>
+            </label>
+            <br />
+            <label>
+                密碼：<input type="password" id="user_password" name="user_password"><span id="error_msg2" class="error">*
+                    密碼沒輸入</span>
+            </label>
+            <br />
+            <input type="submit" value="送出">
+            <input type="reset" value="清除">
+            <br />
+        </fieldset>
+    </form>
+</body>
+
+</html>
